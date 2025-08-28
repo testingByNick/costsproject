@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-import Container from "./Container"
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa"
 import styles from "./Footer.module.css"
 
