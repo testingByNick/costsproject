@@ -25,10 +25,8 @@ function NewProject(){
             { message: 'Sucessfully created project!' }, 
         }
     ))
-
     }
-
-
+    
     return(
         <div className={styles.newProjectContainer}>
             <h1>Create Project</h1>

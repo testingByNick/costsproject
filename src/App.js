@@ -2,11 +2,12 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Home from "./components/pages/Home";
 import Company from "./components/pages/Company";
 import Contact from "./components/pages/Contact";
-import Project from "./components/pages/Project";
+import Projects from "./components/pages/Projects";
 import Container from "./components/layout/Container";
 import NavBar from "./components/layout/NavBar"
 import Footer from "./components/layout/Footer"
 import NewProject from './components/pages/NewProject';
+import Message from './components/layout/Message';
 
 
 
@@ -19,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Company" element={<Company />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Projects" element={<Project />} />
+          <Route path="/Projects" element={<Projects />} />
           <Route path="/NewProject" element={<NewProject/>}/>
         </Routes>
       </Container>
