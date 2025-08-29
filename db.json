@@ -1,25 +1,46 @@
 {
-    "projects": [],
-    "categories": [
-        {
-        "id": 1,
-        "name": "Infra"
-        } ,
-        {
-        "id": 2,
+  "projects": [
+    {
+      "id": "1a7e",
+      "name": "asdaswqe",
+      "category": {
+        "id": "2",
         "name": "Desenvolvimento"
-        } ,
-        {
-        "id": 3,
-        "name": "Design"
-        } ,
-        {
-        "id": 4,
-        "name": "UX/User Experience"
-        } ,
-        {
-        "id": 5,
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "f9d5",
+      "name": "ngfnfbfgb",
+      "category": {
+        "id": "5",
         "name": "Marketing"
-        } 
-    ]
+      },
+      "cost": 0,
+      "services": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Infra"
+    },
+    {
+      "id": "2",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "3",
+      "name": "Design"
+    },
+    {
+      "id": "4",
+      "name": "UX/User Experience"
+    },
+    {
+      "id": "5",
+      "name": "Marketing"
+    }
+  ]
 }
