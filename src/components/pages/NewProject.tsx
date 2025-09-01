@@ -10,15 +10,18 @@ function NewProject(){
 
     function createPost(project){
 
-        project.cost = 0
-        project.services = []
+        const projectData = {
+        ...project,
+        cost: parseFloat(project.budget) || 0,
+        services: [],
+    };
 
         fetch("http://localhost:5000/projects",{
             method: "POST",
             headers:{
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(project),
+            body: JSON.stringify(projectData),
         })
         .then((resp) => resp.json())
         .then((e) => navigate('/projects', { state: 

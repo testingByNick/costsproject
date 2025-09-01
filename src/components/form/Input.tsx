@@ -1,7 +1,19 @@
-import styles from "./Input.module.css"
+import styles from "./Input.module.css";
 
 
-function Input({type, text, name, placeholder, handleOnChange, value}){
+
+
+interface InputProps {
+    type: string;
+    text: string;
+    name: string;
+    placeholder: string;
+    handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value?: string | number;
+}
+
+
+const Input: React.FC<InputProps> = ({type, text, name, placeholder, handleOnChange, value}) => {
     return (
         <div className={styles.formControl}>
             <label htmlFor={name}>{text}:</label>
@@ -14,7 +26,7 @@ function Input({type, text, name, placeholder, handleOnChange, value}){
             defaultValue={value || ''}
             />
         </div>
-    )
-}
+    );
+};
 
 export default Input

@@ -1,7 +1,21 @@
 import styles from "./Select.module.css"
+import React from "react"
+
+interface Option{
+    id: string | number;
+    name: string;
+}
+
+interface SelectProps{
+    text: string;
+    name: string;
+    options: Option[];
+    handleOnChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    value?: string | number;
+}
 
 
-function Select({ text, name, options, handleOnChange, value }) {
+const Select: React.FC<SelectProps> = ({text, name, options, handleOnChange, value}) => {
     
     return (
         <div className={styles.formControl}>

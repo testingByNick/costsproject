@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom"
 import Container from "../layout/Container"
 import LinkButton from "../layout/LinkButton"
 import Message from "../layout/Message"
-import Project from "../project/ProjectCard"
 import { useState, useEffect } from "react"
 import ProjectCard from "./ProjectCard"
 import styles from "../pages/Projects.module.css"
@@ -14,6 +13,7 @@ function Projects() {
 
     const location = useLocation()
     let message = ''
+
     if (location.state) {
         message = location.state.message
     }
@@ -25,9 +25,12 @@ function Projects() {
                 "Content-Type": "application/json",
             },
         })
-        .then((resp) => resp.json())
-        .then((data) => {})
-        .catch((err) => console.log(err))
+            .then((resp) => resp.json())
+            .then((data) => {
+                console.log(data)
+                setProjects(data)
+             })
+            .catch((err) => console.log(err))
     }, [])
 
     return (
@@ -36,10 +39,19 @@ function Projects() {
                 <h1>My Projects</h1>
                 <LinkButton to="/newproject" text="Create new Project"></LinkButton>
             </div>
+            
             {message && <Message type="success" msg={message} />}
+
             <Container customClass="start">
-                <p>Projects...</p>
-            </Container>
+                {projects.length > 0 &&
+                    projects.map((project) => <ProjectCard 
+                        id={project.id}
+                        name={project.name}
+                        budget={project.budget}
+                        category={project.category?.name}
+                        key={project.id}
+                    />)}
+       </Container>
         </div>
     )
 }
