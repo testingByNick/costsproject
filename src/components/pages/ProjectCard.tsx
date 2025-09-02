@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { IProject } from "../../types/project"
 
 
+
 interface ProjectCardProps extends IProject{
     handleRemove?: (id: string) => void;
 }

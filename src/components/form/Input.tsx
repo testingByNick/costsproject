@@ -2,7 +2,6 @@ import styles from "./Input.module.css";
 
 
 
-
 interface InputProps {
     type: string;
     text: string;
@@ -10,7 +9,7 @@ interface InputProps {
     placeholder: string;
     handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string | number;
-}
+};
 
 
 const Input: React.FC<InputProps> = ({type, text, name, placeholder, handleOnChange, value}) => {

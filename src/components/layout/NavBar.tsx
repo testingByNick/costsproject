@@ -25,7 +25,7 @@ function NavBar(){
                 </ul>
             </Container>
         </nav>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;

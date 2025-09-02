@@ -7,7 +7,6 @@ import Container from "./components/layout/Container";
 import NavBar from "./components/layout/NavBar"
 import Footer from "./components/layout/Footer"
 import NewProject from './components/pages/NewProject';
-import Message from './components/layout/Message';
 
 
 

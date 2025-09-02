@@ -3,7 +3,7 @@ import React from "react"
 
 interface SubmitButtonProps {
     text: string;
-}
+};
 
 const SubmitButton: React.FC<SubmitButtonProps> = ({text}) => {
     return (

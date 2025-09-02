@@ -22,7 +22,7 @@ function Footer(){
             </ul>
             <p className={styles.copyRight}><span>Costs</span> &copy; 2025</p>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

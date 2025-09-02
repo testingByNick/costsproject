@@ -7,6 +7,7 @@ import React from "react"
 import { IProject } from "../../types/project"
 
 
+
 interface Category {
     id: string;
     name: string;

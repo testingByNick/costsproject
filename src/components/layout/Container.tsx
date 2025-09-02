@@ -1,10 +1,12 @@
 import styles from './Container.module.css'
 import React, { ReactNode } from "react"
 
- interface ContainerProps{
+
+
+interface ContainerProps{
     children: ReactNode;
     customClass?: string; 
- }
+};
 
 const Container: React.FC<ContainerProps> = ({ children, customClass }) => {
     return (

@@ -2,10 +2,12 @@ import { useState, useEffect } from "react"
 import styles from "./Message.module.css"
 
 
+
 interface MessageProps{
     type: string;
     msg: string;
-}
+};
+
 
 
 const Message: React.FC<MessageProps> = ({ type, msg }) => {
@@ -32,7 +34,7 @@ const Message: React.FC<MessageProps> = ({ type, msg }) => {
         <>
             {visible && (<div className={`${styles.message} ${styles[type]}`}>{msg}</div>)}
         </>
-    )
-}
+    );
+};
 
-export default Message
+export default Message;
