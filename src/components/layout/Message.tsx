@@ -2,8 +2,13 @@ import { useState, useEffect } from "react"
 import styles from "./Message.module.css"
 
 
+interface MessageProps{
+    type: string;
+    msg: string;
+}
 
-function Message({ type, msg }) {
+
+const Message: React.FC<MessageProps> = ({ type, msg }) => {
 
     const [visible, setVisible] = useState(false)
 

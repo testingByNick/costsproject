@@ -29,4 +29,4 @@ const Input: React.FC<InputProps> = ({type, text, name, placeholder, handleOnCha
     );
 };
 
-export default Input
+export default Input;

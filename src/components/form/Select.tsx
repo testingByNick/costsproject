@@ -35,7 +35,7 @@ const Select: React.FC<SelectProps> = ({text, name, options, handleOnChange, val
                 ))}
             </select>
         </div>
-    )
-}
+    );
+};
 
-export default Select
+export default Select;

@@ -5,12 +5,14 @@ import Message from "../layout/Message"
 import { useState, useEffect } from "react"
 import ProjectCard from "./ProjectCard"
 import styles from "../pages/Projects.module.css"
+import {IProject} from "../../types/project"
 
 
-function Projects() {
 
-    const [projects, setProjects] = useState([])
+const Projects: React.FC = () => {
 
+    const [projects, setProjects] = useState<IProject[]>([])
+    const [projectMessage, setProjectMessage] = useState<string>('');
     const location = useLocation()
     let message = ''
 
@@ -26,12 +28,26 @@ function Projects() {
             },
         })
             .then((resp) => resp.json())
-            .then((data) => {
-                console.log(data)
+            .then((data: IProject[]) => {
                 setProjects(data)
              })
             .catch((err) => console.log(err))
     }, [])
+
+    function removeProject(id: string): void {
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((resp) => resp.json())
+    .then(() => {
+      setProjects(projects.filter((project) => project.id !== id));
+      setProjectMessage("Sucessfully deleted project");
+    })
+    .catch((err) => console.log(err));
+  }
 
     return (
         <div className={styles.projectContainer}>
@@ -48,12 +64,13 @@ function Projects() {
                         id={project.id}
                         name={project.name}
                         budget={project.budget}
-                        category={project.category?.name}
+                        category={project.category}
                         key={project.id}
+                        handleRemove={removeProject}
                     />)}
        </Container>
         </div>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;

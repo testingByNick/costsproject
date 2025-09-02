@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom"
 import styles from "./LinkButton.module.css"
 
+interface LinkButtonProps{
+    to: string;
+    text: string
+}
 
-
-function LinkButton({to, text}){
+const LinkButton: React.FC<LinkButtonProps> = ({to, text}) => {
     return(
         <Link className={styles.btn} to={to}>
             {text}
